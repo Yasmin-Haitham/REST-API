@@ -1,0 +1,12 @@
+extends layout.pug 
+block content 
+    div.container
+        form(action="/todo/add" method="POST")
+            div.mb-3
+                label(for="title" class="form-label") Title
+                input(type="text" class="form-control" id="title" aria-describedby="emailHelp" name="title")
+            div.mb-3
+                label(for="description" class="form-label") Description
+                textarea(name="description", cols="30", rows="5", type="text" class="form-control" id="description")
+            div(style='text-align: center')
+                button(type="submit" class="btn btn-primary")  Submit

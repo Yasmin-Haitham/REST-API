@@ -1,0 +1,14 @@
+extends layout.pug 
+block content 
+        div(style="display: flex; justify-content: flex-end")
+            button(type="button" class="btn btn-primary" style="text-align: right")
+                a(href="/todo/add" style="text-decoration:none; color: white") Add New Task
+        div.row
+            each todo, index in todos
+                div.col-6
+                    div.card
+                    div.card-body
+                        h5.card-title #{todo.title}
+                        p.card-text #{todo.description}
+                        a(href=`/todo/Edit/${index}` class="btn btn-primary") Edit
+                        a(href=`/todo/Delete/${index}` class="btn btn-danger ms-2") Delete
